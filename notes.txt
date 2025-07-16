@@ -1,0 +1,78 @@
+git part 5
+git clone allows others to create a clone of our project
+for that create a new folder abd git clone <our project directory>- it also contain from where it is cloned
+
+git uses ssh to allow other machines to clone our project, here our machine acts as ssh server
+
+
+part 6
+
+these are branches in server
+
+while working on client side we suppose there is branch in server called test but we cannot access it but we can monitor it by checkouting to a new branch with name test which monitors the servers test branch
+
+here server's test is called upstream branch
+the local branch that tracks upstream is called tracking branch
+tracking branch is in clients local repository
+
+Tracking branch allow client to see changes in server
+
+git fetch- updates the tracking branch withh all the changes made in server branch
+
+after changes from server branch is obtained by tracking branch these changes must be merged with the corresponding branch in client side using git merge
+
+
+fetch and merge together forms pull - 
+fetch + merge = pull
+if git pull is used both fetch and merge is performed
+
+git push - To send changes made in client to server
+after git push changes will be applied to server
+
+after making changes in client side its also notifies that the branch is ahead of orgin branch by certain number of commits
+
+pullrequest - pull request is used by client to inform that the certain branch has been completed and is ready to merge (informing them that this is our branch and its completed and look into it and consider merging it)
+
+then the senior developer will look diff between main and test branch check decides to merge or not
+
+review- after reviwing the code if the changes are not satisfactory the senior dev sends back to correct it this is called review 
+
+git push directly changes remote server in server but pull request changes must be reviwed by senior develope before merging
+
+our git push will be rejected if some other people have pushed before us because to push to server we must have all the commits that are in server branch before we can push
+rejection is because since some person has pushed theres  extra commit in server which we dont have hence we cant push
+Or 
+Else we have to pull everything and then push. 
+
+Now thridparty services are used like github
+
+note- 
+Upstream branch is the remote branch you are tracking
+tracking branch is your local branch that is tracking that upstream
+
+
+
+
+
+
+
+part 7
+
+github is used as a git server 
+since git is distributed we dont know who has the latest code so a central repository is maintained
+
+github features - generate pull request, review, bug/feature management
+github has public-free, public access, good for opensource
+ and private repository- only allowed user can access the repository
+
+ git branch -M main - To change current name of branch from master to main
+
+ git remote add origin https://github.com/Pratyushu69/Sample1.git-- to add remote in github repository that is tomake github server
+
+ git push -u origin main - we cannot directly push it , first we need to create ssh key using ssh-keygen -C "pratyushunnithan28@gmail.com"
+  
+
+  after adding the ssh key in github we can use git push -u origin main
+  it is also used because initially there is no tracking branch so to create one we use it
+  -u here is to set a tracking branch
+  this is done only once
