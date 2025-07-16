@@ -76,3 +76,30 @@ github has public-free, public access, good for opensource
   it is also used because initially there is no tracking branch so to create one we use it
   -u here is to set a tracking branch
   this is done only once
+
+
+  part 9
+  fastforward merge happens when a new branch is created for fixing 3 bugs and the main branch doesnt have any extra commi then the label is fast forward to the latest commit of new branch
+
+  three way merge - happens when main branch has extra commits and another branch has extra feature and when tried to merge forms a new commit called merged commit.
+  that commit has 2 parent 
+
+  git rebase helps prevent non linear history that when log contains mixed commits of 2 different branches
+
+  rebase happen when 2 branches for eg main and feat get merged then all the commit from feat in order  is attached to main branch'd HEAD
+
+  eg git checkout feat
+  git rebase main
+
+  git rebase helps manage a linear history
+  so if there are many memebers in a team everyone should rebase before merging
+  service providers like github will have config to set a branch to have only linear history
+  we can change in github setting and set the branch to have linear history
+
+
+  git pull --rebase = fetch + rebase
+
+  git pull orgin main --rebase - rebases current branch with main branch
+
+  note-we can only push if we have all commit from server
+  And to force push that is overwrite the server commits we use "git push -f"
